@@ -5,8 +5,8 @@ import baseball.domain.entity.Numbers;
 
 public class BallService {
 
-    public Ball createBall(Numbers UserNumbers, Numbers computerNumbers) {
-        int ballCount = UserNumbers.countSameValueAndSamePlace(computerNumbers);
+    public Ball createBall(Numbers userNumbers, Numbers computerNumbers) {
+        int ballCount = userNumbers.countSameValueAndDifferentPlace(computerNumbers);
 
         return new Ball(ballCount);
     }

@@ -34,13 +34,28 @@ public class GameController {
         outputStartGameMessage();
 
         Numbers computerNumbers = createComputerNumbers();
-        Numbers userNumbers = inputNumbers();
 
+        while (true) {
+            Hints hints = processUserInput(computerNumbers);
+
+            if (hints.ismeetingEndConditions()) {
+                outputView.outputEndMessage();
+                break;
+            }
+        }
+
+        askRegame();
+    }
+
+    private Hints processUserInput(Numbers computerNumbers) {
+        Numbers userNumbers = inputNumbers();
+        System.out.println(userNumbers.getNumbers());
+        System.out.println(computerNumbers.getNumbers());
         Hints hints = createHints(userNumbers, computerNumbers);
 
         outputHints(hints);
 
-        askRegame();
+        return hints;
     }
 
     private void outputStartGameMessage() {
@@ -63,7 +78,7 @@ public class GameController {
         Ball ball = ballService.createBall(userNumbers, computerNumbers);
         Strike strike = strikeService.createStrike(userNumbers, computerNumbers);
         Nothing nothing = nothingService.createNothing(ball, strike);
-
+        System.out.println(ball.getCount()+" "+strike.getCount()+" "+nothing.isActivation());
         return new Hints(ball, strike, nothing);
     }
 

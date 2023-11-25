@@ -20,7 +20,7 @@ public class OutputView {
         int ballCount = hintsDto.ballCount();
         int strikeCount = hintsDto.strikeCount();
         boolean isNothing = hintsDto.isNothing();
-
+        System.out.println(ballCount+ " " + strikeCount + " " +isNothing);
         String result = StringUtil.joinNonEmptyStrings(" ",
                 makeBallFormat(ballCount),
                 makeStrikeFormat(strikeCount),

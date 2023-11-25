@@ -46,7 +46,7 @@ public class Numbers {
 
     private int countMatchesAtDifferentPlaces(int index, Numbers other) {
         return (int) IntStream.range(0, other.getSize())
-                .filter(j -> index != j && this.getNumber(index) == other.getNumber(index))
+                .filter(j -> index != j && this.getNumber(index) == other.getNumber(j))
                 .count();
     }
 
