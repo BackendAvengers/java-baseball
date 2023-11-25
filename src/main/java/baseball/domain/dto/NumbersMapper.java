@@ -14,7 +14,7 @@ public class NumbersMapper {
 
         IntegerListValidator.validateInteger(separated);
 
-        List<Integer> converted = Arrays.stream(input.split(" "))
+        List<Integer> converted = Arrays.stream(input.split(""))
                 .map(Integer::parseInt)
                 .toList();
 
