@@ -10,4 +10,12 @@ public class Strike {
     public boolean isActivate() {
         return count>0;
     }
+
+    public boolean isSameCount(int value) {
+        return count==value;
+    }
+
+    public int getCount() {
+        return count;
+    }
 }

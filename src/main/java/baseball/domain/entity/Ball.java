@@ -10,4 +10,8 @@ public class Ball {
     public boolean isActivate() {
         return count>0;
     }
+
+    public int getCount() {
+        return count;
+    }
 }

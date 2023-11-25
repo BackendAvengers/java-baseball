@@ -14,4 +14,8 @@ public class Nothing {
     public static Nothing createNotActivated() {
         return new Nothing(false);
     }
+
+    public boolean isActivation() {
+        return activation;
+    }
 }
