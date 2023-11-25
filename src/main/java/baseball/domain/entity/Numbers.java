@@ -50,14 +50,6 @@ public class Numbers {
                 .count();
     }
 
-    public int getSize() {
-        return numbers.size();
-    }
-
-    public int getNumber(int index) {
-        return numbers.get(index);
-    }
-
     private void validate(List<Integer> numbers) {
         validateLength(numbers);
         validateDuplicate(numbers);
@@ -93,5 +85,13 @@ public class Numbers {
 
     public List<Integer> getNumbers() {
         return numbers;
+    }
+
+    public int getSize() {
+        return numbers.size();
+    }
+
+    public int getNumber(int index) {
+        return numbers.get(index);
     }
 }
