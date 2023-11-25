@@ -5,6 +5,7 @@ import static baseball.constants.IntegerConstants.NUMBERS_MAX_RANGE;
 import static baseball.constants.IntegerConstants.NUMBERS_MIN_RAGNE;
 
 import baseball.util.ExceptionUtil;
+import baseball.util.RandomUtil;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,6 +20,15 @@ public class Numbers {
 
     public static Numbers create(List<Integer> numbers) {
         return new Numbers(numbers);
+    }
+
+    public static Numbers createRandom() {
+        List<Integer> generated = RandomUtil.pickRandomNumbers(
+                NUMBERS_LENGTH.getValue(),
+                NUMBERS_MIN_RAGNE.getValue(),
+                NUMBERS_MAX_RANGE.getValue());
+
+        return new Numbers(generated);
     }
 
     private void validate(List<Integer> numbers) {
@@ -45,7 +55,6 @@ public class Numbers {
 
         if (removeDuplicate.size() != numbers.size()) {
             ExceptionUtil.throwInvalidValueException();
-
         }
     }
 
