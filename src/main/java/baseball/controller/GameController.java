@@ -17,12 +17,12 @@ public class GameController {
     private final InputView inputView;
     private final OutputView outputView;
     private final BallService ballService;
-    private final NothingService nothingService;
     private final StrikeService strikeService;
+    private final NothingService nothingService;
 
 
     public GameController(InputView inputView, OutputView outputView, BallService ballService,
-                          NothingService nothingService, StrikeService strikeService) {
+                          StrikeService strikeService, NothingService nothingService) {
         this.inputView = inputView;
         this.outputView = outputView;
         this.ballService = ballService;
