@@ -6,4 +6,8 @@ public class Ball {
     public Ball(int count) {
         this.count = count;
     }
+
+    public boolean isActivate() {
+        return count>0;
+    }
 }

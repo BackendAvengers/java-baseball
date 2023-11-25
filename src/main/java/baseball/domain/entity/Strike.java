@@ -7,4 +7,7 @@ public class Strike {
         this.count = count;
     }
 
+    public boolean isActivate() {
+        return count>0;
+    }
 }
