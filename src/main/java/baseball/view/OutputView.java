@@ -3,12 +3,18 @@ package baseball.view;
 import static baseball.messages.OutputMessages.BALL;
 import static baseball.messages.OutputMessages.MEETING_END_CONDITIONS;
 import static baseball.messages.OutputMessages.NOTHING;
+import static baseball.messages.OutputMessages.START_INPUT;
 import static baseball.messages.OutputMessages.STRIKE;
 
 import baseball.domain.dto.HintsDto;
 import baseball.util.StringUtil;
 
 public class OutputView {
+
+    public void start() {
+        System.out.println(START_INPUT.getMessage());
+    }
+
 
     public void outputHints(HintsDto hintsDto) {
         int ballCount = hintsDto.ballCount();
