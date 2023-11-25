@@ -9,6 +9,7 @@ import baseball.util.RandomUtil;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Numbers {
     private final List<Integer> numbers;
@@ -29,6 +30,32 @@ public class Numbers {
                 NUMBERS_MAX_RANGE.getValue());
 
         return new Numbers(generated);
+    }
+
+    public int countSameValueAndSamePlace(Numbers other) {
+        return (int) IntStream.range(0, numbers.size())
+                .filter(index -> this.getNumber(index) == other.getNumber(index))
+                .count();
+    }
+
+    public int countSameValueAndDifferentPlace(Numbers other) {
+        return IntStream.range(0, this.getSize())
+                .map(i -> countMatchesAtDifferentPlaces(i, other))
+                .sum();
+    }
+
+    private int countMatchesAtDifferentPlaces(int index, Numbers other) {
+        return (int) IntStream.range(0, other.getSize())
+                .filter(j -> index != j && this.getNumber(index) == other.getNumber(index))
+                .count();
+    }
+
+    public int getSize() {
+        return numbers.size();
+    }
+
+    public int getNumber(int index) {
+        return numbers.get(index);
     }
 
     private void validate(List<Integer> numbers) {
@@ -64,5 +91,7 @@ public class Numbers {
         }
     }
 
-
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
 }
