@@ -20,8 +20,8 @@ public enum Regame {
                 .orElseThrow(() -> ExceptionUtil.returnInvalidValueException());
     }
 
-    public boolean askRegame(int number) {
-        if (number == REGAME.number) {
+    public boolean askRegame() {
+        if (this.number == REGAME.number) {
             return true;
         }
         return false;
